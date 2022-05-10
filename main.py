@@ -10,11 +10,13 @@ def home():
         for val in request.form:
             valList.append(request.form[val]) #Adds each input onto list
         print(valList)
-        return render_template('base.html', apple=valList[0], banana=valList[1]) #Two data inputs are sent through to html page as variables.
+        return render_template('base.html', data1=valList[0], data2=valList[1]) #Two data inputs are sent through to html page as variables.
     else:
         return render_template('base.html') #GET methods
 
-
+@app.route('/data')
+def data():
+    return render_template('data.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
