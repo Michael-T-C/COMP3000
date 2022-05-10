@@ -8,14 +8,20 @@
     </head>
     <body>
         <h1>
-            Heading - Input Data 1 = {{apple}} , Input Data 2 = {{banana}}
+            Parkinsons Data Input 
         </h1>
         <form method = 'post'>
-            <input type='text' name='apple'>
-            <input type='text' name='banana'>
+            <input type='text' name='data1'>
+            <input type='text' name='data2'>
             <input type='submit' value='Submit Set of Data'>
         </form>
-
+        <h2>
+            Input Data 1 = {{data1}} , Input Data 2 = {{data2}}
+        </h2>
+        
+        <a href='Processed Data Page'></a>
+        {% block content %}
+        {% endblock %}
 
     </body>
 </html>
