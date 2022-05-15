@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <style>
+        .result{
+            position: relative;
+            width: 30pc;
+            left: 3pc;
+            top: 2pc;
+        }
+    </style>
+
+    <div class="result">
+        <h1> Analysed Results </h1>
+        <p id="status">
+            Patient Status: {{prediction}}
+        </p>
+        <p>
+            Model Accuracy: {{accuracy}}%
+        </p>
+    </div>
+        
+{% endblock %}

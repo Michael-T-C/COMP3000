@@ -4,24 +4,79 @@
         <title>
             Parkinsons Detection Service
         </title>
+        <link rel="stylesheet" href='base.css'>
+        <style>
+            body{
+                background-image: url('static/images/background.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .display{
+                background-color: white;
+                position: relative;
+                width: 40pc;
+                height: 25pc;
+                left: 30pc;
+                top: 5pc;
+                padding: 12px;
+                padding-top: 12px;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #111;
+            }
+        
+        </style>
         
     </head>
     <body>
         <h1>
             Parkinsons Data Input 
         </h1>
-        <form method = 'post'>
-            <input type='text' name='data1'>
-            <input type='text' name='data2'>
-            <input type='submit' value='Submit Set of Data'>
-        </form>
-        <h2>
-            Input Data 1 = {{data1}} , Input Data 2 = {{data2}}
-        </h2>
-        
-        <a href='Processed Data Page'></a>
-        {% block content %}
-        {% endblock %}
 
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="data">Data</a></li>
+            <li><a href="#contact">Model Information</a></li>
+            <li><a href="#about">Extra</a></li>
+        </ul>
+
+        <div class ='display'>
+            <p style = 'margin: 5px'>
+                Upload Data
+            </p>
+            <form method = 'post', action = 'predict'>
+                CSV File <input type='file' name='csvfile'>
+                <input type='submit' value='Submit Data'>
+            </form>
+    
+            
+            <a href='Processed Data Page'></a>
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+            
     </body>
 </html>
